@@ -1,0 +1,163 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`List List basic render snapshoot with empty list 1`] = `
+.c0 {
+  background-color: #000000;
+}
+
+.c0 div {
+  border-top: none;
+}
+
+<div
+  className="c0"
+/>
+`;
+
+exports[`List List complete with obj.name render snapshoot with empty list 1`] = `
+.c1 {
+  cursor: pointer;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  font-family: 'Roboto',sans-serif;
+}
+
+.c0 {
+  background-color: #000000;
+}
+
+.c0 div {
+  border-top: none;
+}
+
+.c2 {
+  padding: 14px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  cursor: pointer;
+  border-bottom: 1px solid #999999;
+  font-family: 'Roboto',sans-serif;
+  font-size: 22px;
+  -webkit-transition: 0.25s;
+  transition: 0.25s;
+  color: #999999;
+}
+
+.c2:hover {
+  color: #FFFFFF;
+}
+
+<div
+  className="c0"
+>
+  <a
+    className="c1"
+    onClick={[Function]}
+  >
+    <div
+      className="c2"
+    >
+      item 1
+    </div>
+  </a>
+  <a
+    className="c1"
+    onClick={[Function]}
+  >
+    <div
+      className="c2"
+    >
+      item 2
+    </div>
+  </a>
+  <a
+    className="c1"
+    onClick={[Function]}
+  >
+    <div
+      className="c2"
+    >
+      item 3
+    </div>
+  </a>
+</div>
+`;
+
+exports[`List List complete with obj.title render snapshoot with empty list 1`] = `
+.c1 {
+  cursor: pointer;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  font-family: 'Roboto',sans-serif;
+}
+
+.c0 {
+  background-color: #000000;
+}
+
+.c0 div {
+  border-top: none;
+}
+
+.c2 {
+  padding: 14px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  cursor: pointer;
+  border-bottom: 1px solid #999999;
+  font-family: 'Roboto',sans-serif;
+  font-size: 22px;
+  -webkit-transition: 0.25s;
+  transition: 0.25s;
+  color: #999999;
+}
+
+.c2:hover {
+  color: #FFFFFF;
+}
+
+<div
+  className="c0"
+>
+  <a
+    className="c1"
+    onClick={[Function]}
+  >
+    <div
+      className="c2"
+    >
+      item 1
+    </div>
+  </a>
+  <a
+    className="c1"
+    onClick={[Function]}
+  >
+    <div
+      className="c2"
+    >
+      item 2
+    </div>
+  </a>
+  <a
+    className="c1"
+    onClick={[Function]}
+  >
+    <div
+      className="c2"
+    >
+      item 3
+    </div>
+  </a>
+</div>
+`;

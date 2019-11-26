@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Item Item basic render snapshoot 1`] = `
+<div
+  className="Itemstyles__ItemContainer-a74njx-0 idPjVX"
+>
+  <p>
+    Link to google
+  </p>
+</div>
+`;

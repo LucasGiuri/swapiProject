@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Image Image basic render snapshoot 1`] = `
+.c0 {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  width: 200px;
+}
+
+<img
+  alt="alt"
+  className="c0"
+  onClick={[Function]}
+  src="http://pokestadium.com/sprites/xy/charizard.gif"
+/>
+`;
+
+exports[`Image Image isLogo render snapshoot 1`] = `
+.c0 {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  width: 100px;
+}
+
+<img
+  alt="alt"
+  className="c0"
+  onClick={[Function]}
+  src="http://pokestadium.com/sprites/xy/charizard.gif"
+/>
+`;
