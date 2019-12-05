@@ -24,7 +24,6 @@ export const getTotalVehicles = (state) => vehiclesSelectors.getTotalVehicles(st
 export const getVehiclesNextPage = (state) => vehiclesSelectors.getVehiclesNextPage(state.vehicles);
 export const getVehiclesPreviousPage = (state) => vehiclesSelectors.getVehiclesPreviousPage(state.vehicles);
 
-
 export const getAllFilms = (state) => filmsSelectors.getAllFilms(state.films);
 export const getFilmById = (state) => filmsSelectors.getFilmById(state.films);
 export const isLoadingFilms = (state) => filmsSelectors.isLoadingFilms(state.films);
