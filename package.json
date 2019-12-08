@@ -61,6 +61,7 @@
     "dev": "node server.js",
     "build": "next build",
     "start": "next start",
+    "heroku-postbuild": "npm run build",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook"
   },
