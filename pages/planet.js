@@ -1,5 +1,6 @@
 import { connect } from 'react-redux';
 import * as selectors from '../store/selectors';
+import * as operations from '../store/operations';
 import Planet from '../containers/Planets/Planet';
 
 const mapStateToProps = (state) => {
@@ -9,4 +10,10 @@ const mapStateToProps = (state) => {
   }
 };
 
-export default connect(mapStateToProps, null)(Planet);
+const mapDispatchToProps = (dispatch) => {
+  return {
+    getPlanetById: (id) => dispatch(operations.getPlanetById(id)),
+  }
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Planet);

@@ -16,7 +16,7 @@ const List = ({list, filterBy, section}) => {
           const id = item.url.substring(index, item.url.length);
 
           return (
-            <NavLink key={item.url} href={sectionName + id} as={sectionName + id}>
+            <NavLink key={item.url} href={sectionName} as={`${sectionName}${id}`}>
               <Item>{item.name ? item.name : item.title}</Item>
             </NavLink>
           )

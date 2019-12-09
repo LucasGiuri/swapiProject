@@ -36,6 +36,7 @@ exports[`Header Header basic render snapshoot 1`] = `
   <a
     className="c1"
     onClick={[Function]}
+    onMouseEnter={[Function]}
   >
     <img
       alt="logo"

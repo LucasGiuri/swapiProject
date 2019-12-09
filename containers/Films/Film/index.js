@@ -1,3 +1,5 @@
+import { useEffect } from 'react';
+import { useRouter } from 'next/router';
 import PropTypes from 'prop-types';
 import * as operations from '../../../store/operations';
 import Title from '../../../components/Title/Title';
@@ -5,7 +7,16 @@ import Item from '../../../components/Item/Item';
 import { Section } from '../../../static/styles/global';
 import { Fragment } from 'react';
 
-const Film = ({ film, isLoading }) => {
+const Film = ({ film, isLoading, id, getFilmById }) => {
+  const router = useRouter();
+
+  useEffect(() => {
+    if (!id) {
+      const urlId = router.asPath.split("/")[2];
+      getFilmById(urlId);
+    }
+  }, [getFilmById]);
+
   const { title, director, producer, releaseDate, vehicles, characters, planets } = film;
   const loading = "Loading...";
 
@@ -58,6 +69,11 @@ Film.propTypes = {
     planets: PropTypes.array,
     characters: PropTypes.array
   }),
+  getFilmById: PropTypes.func,
+  id: PropTypes.oneOfType([
+    PropTypes.number,
+    PropTypes.string,
+  ]).isRequired,
   isLoading: PropTypes.bool,
 };
 
@@ -71,12 +87,14 @@ Film.defaultProps = {
     planets: [],
     characters: []
   },
+  getFilmById: () => {},
   isLoading: false
 };
 
 Film.getInitialProps = async ({ store, query }) => {
-  await store.dispatch(operations.getFilmById(query.filmId));
-  return {}
+  const { filmId } = query;
+  filmId ? await store.dispatch(operations.getFilmById(filmId)) : '';
+  return {id: filmId}
 };
 
 export default Film;

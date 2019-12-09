@@ -1,5 +1,6 @@
 import { connect } from 'react-redux';
 import * as selectors from '../store/selectors';
+import * as operations from '../store/operations';
 import Film from '../containers/Films/Film';
 
 const mapStateToProps = (state) => {
@@ -9,4 +10,10 @@ const mapStateToProps = (state) => {
   }
 };
 
-export default connect(mapStateToProps, null)(Film);
+const mapDispatchToProps = (dispatch) => {
+  return {
+    getFilmById: (id) => dispatch(operations.getFilmById(id)),
+  }
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Film);

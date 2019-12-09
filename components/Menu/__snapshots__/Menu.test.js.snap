@@ -73,6 +73,7 @@ exports[`Menu Menu basic render snapshoot with empty list 1`] = `
       <a
         className="c3"
         onClick={[Function]}
+        onMouseEnter={[Function]}
       >
         People
       </a>
@@ -83,6 +84,7 @@ exports[`Menu Menu basic render snapshoot with empty list 1`] = `
       <a
         className="c3"
         onClick={[Function]}
+        onMouseEnter={[Function]}
       >
         Films
       </a>
@@ -93,6 +95,7 @@ exports[`Menu Menu basic render snapshoot with empty list 1`] = `
       <a
         className="c3"
         onClick={[Function]}
+        onMouseEnter={[Function]}
       >
         Vehicles
       </a>
@@ -103,6 +106,7 @@ exports[`Menu Menu basic render snapshoot with empty list 1`] = `
       <a
         className="c3"
         onClick={[Function]}
+        onMouseEnter={[Function]}
       >
         Planets
       </a>

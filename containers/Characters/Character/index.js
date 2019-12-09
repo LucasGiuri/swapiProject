@@ -1,3 +1,5 @@
+import { useEffect } from 'react';
+import { useRouter } from 'next/router';
 import PropTypes from 'prop-types';
 import * as operations from '../../../store/operations';
 import Title from '../../../components/Title/Title';
@@ -5,7 +7,16 @@ import Item from '../../../components/Item/Item';
 import { Section } from '../../../static/styles/global';
 import { Fragment } from 'react';
 
-const Character = ({ character, isLoading }) => {
+const Character = ({ character, isLoading, id, getCharacterById }) => {
+  const router = useRouter();
+
+  useEffect(() => {
+    if (!id) {
+      const urlId = router.asPath.split("/")[2];
+      getCharacterById(urlId);
+    }
+  }, [getCharacterById]);
+
   const { name, height, mass, hairColor, skinColor, eyeColor, 
           birthYear, gender, homeworld, films, vehicles } = character;
 
@@ -67,6 +78,11 @@ Character.propTypes = {
     films: PropTypes.array,
     vehicles: PropTypes.array,
   }),
+  getCharacterById: PropTypes.func,
+  id: PropTypes.oneOfType([
+    PropTypes.number,
+    PropTypes.string,
+  ]).isRequired,
   isLoading: PropTypes.bool,
 };
 
@@ -84,12 +100,14 @@ Character.defaultProps = {
     films: '',
     vehicles: ''
   },
+  getCharacterById: () => {},
   isLoading: false
 };
 
 Character.getInitialProps = async ({ store, query }) => {
-  await store.dispatch(operations.getCharacterById(query.characterId));
-  return {}
+  const { characterId } = query;
+  characterId ? await store.dispatch(operations.getCharacterById(characterId)) : '';
+  return {id: characterId}
 };
 
 export default Character;

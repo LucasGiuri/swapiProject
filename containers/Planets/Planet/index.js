@@ -1,3 +1,5 @@
+import { useEffect } from 'react';
+import { useRouter } from 'next/router';
 import PropTypes from 'prop-types';
 import * as operations from '../../../store/operations';
 import Title from '../../../components/Title/Title';
@@ -5,7 +7,16 @@ import Item from '../../../components/Item/Item';
 import { Section } from '../../../static/styles/global';
 import { Fragment } from 'react';
 
-const Planet = ({ planet, isLoading }) => {
+const Planet = ({ planet, isLoading, id, getPlanetById }) => {
+  const router = useRouter();
+
+  useEffect(() => {
+    if (!id) {
+      const urlId = router.asPath.split("/")[2];
+      getPlanetById(urlId);
+    }
+  }, [getPlanetById]);
+
   const { name, diameter, rotation, orbital, gravity, population, 
           climate, terrain, surfaceWater, residents, films } = planet;
 
@@ -67,6 +78,11 @@ Planet.propTypes = {
     residents: PropTypes.array,
     films: PropTypes.array
   }),
+  getPlanetById: PropTypes.func,
+  id: PropTypes.oneOfType([
+    PropTypes.number,
+    PropTypes.string,
+  ]).isRequired,
   isLoading: PropTypes.bool,
 };
 
@@ -84,12 +100,14 @@ Planet.defaultProps = {
     residents: [],
     films: []
   },
+  getPlanetById: () => {},
   isLoading: false
 };
 
 Planet.getInitialProps = async ({ store, query }) => {
-  await store.dispatch(operations.getPlanetById(query.planetId));
-  return {}
+  const { planetId } = query;
+  planetId ? await store.dispatch(operations.getPlanetById(planetId)) : '';
+  return {id: planetId}
 };
 
 export default Planet;

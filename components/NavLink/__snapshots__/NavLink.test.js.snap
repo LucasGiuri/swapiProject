@@ -4,6 +4,7 @@ exports[`NavLink NavLink basic render snapshoot 1`] = `
 <a
   className="NavLinkstyles__A-sc-11jmyh2-0 emSeIZ"
   onClick={[Function]}
+  onMouseEnter={[Function]}
 >
   <p>
     Link to google

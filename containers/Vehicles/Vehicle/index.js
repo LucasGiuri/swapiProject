@@ -1,3 +1,5 @@
+import { useEffect } from 'react';
+import { useRouter } from 'next/router';
 import PropTypes from 'prop-types';
 import * as operations from '../../../store/operations';
 import Title from '../../../components/Title/Title';
@@ -5,7 +7,16 @@ import Item from '../../../components/Item/Item';
 import { Section } from '../../../static/styles/global';
 import { Fragment } from 'react';
 
-const Vehicle = ({ vehicle, isLoading }) => {
+const Vehicle = ({ vehicle, isLoading, id, getVehicleById }) => {
+  const router = useRouter();
+
+  useEffect(() => {
+    if (!id) {
+      const urlId = router.asPath.split("/")[2];
+      getVehicleById(urlId);
+    }
+  }, [getVehicleById]);
+
   const { name, model, vehicleClass, credits, passengers, speed, capacity, films, pilots } = vehicle;
   const loading = "Loading...";
 
@@ -59,6 +70,11 @@ Vehicle.propTypes = {
     pilots: PropTypes.array,
     films: PropTypes.array
   }),
+  getVehicleById: PropTypes.func,
+  id: PropTypes.oneOfType([
+    PropTypes.number,
+    PropTypes.string,
+  ]).isRequired,
   isLoading: PropTypes.bool,
 };
 
@@ -74,12 +90,14 @@ Vehicle.defaultProps = {
     pilots: [],
     films: [],
   },
+  getVehicleById: () => {},
   isLoading: false
 };
 
 Vehicle.getInitialProps = async ({ store, query }) => {
-  await store.dispatch(operations.getVehicleById(query.vehicleId));
-  return {}
+  const { vehicleId } = query;
+  vehicleId ? await store.dispatch(operations.getVehicleById(vehicleId)) : '';
+  return {id: vehicleId}
 };
 
 export default Vehicle;

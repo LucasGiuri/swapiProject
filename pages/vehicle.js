@@ -1,5 +1,6 @@
 import { connect } from 'react-redux';
 import * as selectors from '../store/selectors';
+import * as operations from '../store/operations';
 import Vehicle from '../containers/Vehicles/Vehicle';
 
 const mapStateToProps = (state) => {
@@ -9,4 +10,10 @@ const mapStateToProps = (state) => {
   }
 };
 
-export default connect(mapStateToProps, null)(Vehicle);
+const mapDispatchToProps = (dispatch) => {
+  return {
+    getVehicleById: (id) => dispatch(operations.getVehicleById(id)),
+  }
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Vehicle);
