@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import * as operations from '../store/operations';
 import * as selectors from '../store/selectors';
-import Planets from '../containers/Planets';
+import Planets from '../components/containers/Planets';
 
 const mapStateToProps = (state) => {
   return {
