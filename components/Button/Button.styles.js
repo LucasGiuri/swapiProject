@@ -1,6 +1,6 @@
 import styled from 'styled-components';
-import { WHITE, BLACK, OLD_GREY } from '../../static/styles/colors';
-import { device } from '../../static/styles/devices';
+import { WHITE, BLACK, OLD_GREY } from '../../public/styles/colors';
+import { device } from '../../public/styles/devices';
 
 export const Btn = styled.button`
   padding: 10px;

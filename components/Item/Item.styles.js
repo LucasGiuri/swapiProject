@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { WHITE, OLD_GREY } from '../../static/styles/colors';
+import { WHITE, OLD_GREY } from '../../public/styles/colors';
 
 export const ItemContainer = styled.div`
   padding: 14px;

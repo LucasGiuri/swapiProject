@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import * as operations from '../../../store/operations';
 import Title from '../../../components/Title/Title';
 import Item from '../../../components/Item/Item';
-import { Section } from '../../../static/styles/global';
+import { Section } from '../../../public/styles/global';
 import { Fragment } from 'react';
 
 const Planet = ({ planet, isLoading, id, getPlanetById }) => {

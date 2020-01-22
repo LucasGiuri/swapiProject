@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { device } from '../../static/styles/devices';
+import { device } from '../../public/styles/devices';
 
 export const PaginationContainer = styled.div`
   padding-left: 14px;

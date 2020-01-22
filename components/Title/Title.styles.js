@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { PRIMARY } from '../../static/styles/colors';
+import { PRIMARY } from '../../public/styles/colors';
 
 export const Text = styled.p`
   margin-bottom:  ${props => props.isSmall ? '0': '22px'};

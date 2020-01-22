@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { PRIMARY, SECONDARY, WHITE } from '../../static/styles/colors';
+import { PRIMARY, SECONDARY, WHITE } from '../../public/styles/colors';
 
 export const Nav = styled.div`
   width: 100%;

@@ -1,6 +1,6 @@
 import React from 'react';
 import App from 'next/app';
-import { Body } from '../static/styles/global';
+import { Body } from '../public/styles/global';
 import Head from 'next/head';
 import Header from '../components/Header/Header';
 import makeStore from '../store';
