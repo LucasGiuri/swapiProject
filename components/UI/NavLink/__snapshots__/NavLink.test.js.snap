@@ -2,7 +2,7 @@
 
 exports[`NavLink NavLink basic render snapshoot 1`] = `
 <a
-  className="NavLinkstyles__A-sc-11jmyh2-0 emSeIZ"
+  className="NavLinkstyles__A-sc-1kqds5b-0 bgqGmb"
   onClick={[Function]}
   onMouseEnter={[Function]}
 >

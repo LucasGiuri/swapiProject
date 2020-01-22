@@ -6,7 +6,7 @@ import NavLink from '../NavLink/NavLink';
 const Header = () => (
   <HeaderContainer>
     <NavLink href="/" as="/">
-      <Image isLogo={true} url="/static/icons/beezy-logo.png" alt="logo" />
+      <Image isLogo={true} url="/static/icons/logo.png" alt="logo" />
     </NavLink>
     <Menu />
   </HeaderContainer>

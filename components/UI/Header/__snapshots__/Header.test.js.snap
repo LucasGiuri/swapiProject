@@ -42,7 +42,7 @@ exports[`Header Header basic render snapshoot 1`] = `
       alt="logo"
       className="c2"
       onClick={[Function]}
-      src="/static/icons/beezy-logo.png"
+      src="/static/icons/logo.png"
     />
   </a>
   <Menu />
