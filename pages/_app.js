@@ -20,5 +20,5 @@ class Project extends App {
 		)
 	}
 }
-		
+
 export default withRedux(makeStore)(Project);
