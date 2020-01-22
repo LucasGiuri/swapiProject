@@ -1,7 +1,6 @@
 import React from 'react';
 import App from 'next/app';
 import { Body } from '../public/styles/global';
-import Head from 'next/head';
 import Header from '../components/UI/Header/Header';
 import makeStore from '../store';
 import { Provider } from "react-redux";
@@ -11,7 +10,7 @@ class Project extends App {
 	render() {
 		const { Component, store, pageProps } = this.props;
 
-    return (
+		return (
 			<Body>
 				<Provider store={store}>
 					<Header />
@@ -21,5 +20,5 @@ class Project extends App {
 		)
 	}
 }
-
+		
 export default withRedux(makeStore)(Project);
